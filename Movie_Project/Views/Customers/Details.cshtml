@@ -1,0 +1,34 @@
+﻿@model Movie_Project.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Customer</h4>
+    <hr />
+	<dl class="dl-horizontal">
+		@if (Model.Birthdate.HasValue)
+		{
+			<dt>
+				@Html.DisplayNameFor(model => model.Birthdate)
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.Birthdate)
+			</dd>
+
+		}
+
+		<dt>
+			@Html.DisplayNameFor(model => model.MembershipType.Name)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.MembershipType.Name)
+		</dd>
+	</dl>
+</div>

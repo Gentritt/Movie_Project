@@ -1,0 +1,31 @@
+﻿@model Movie_Project.ViewModels.CustomMovieViewModel
+@{
+	ViewBag.Title = "MovieForm";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Save", "Movies"))
+{
+	<div class="form-group">
+		@Html.LabelFor(m => m.Movie.Name)
+		@Html.TextBoxFor(m => m.Movie.Name, new { @class = "form-control" })
+	</div>
+	<div class="form-group">
+		@Html.LabelFor(m => m.Movie.ReleaseDate)
+		@Html.TextBoxFor(m => m.Movie.ReleaseDate, new { @class = "form-control" })
+	</div>
+	<div class="form-group">
+		@Html.LabelFor(m => m.Movie.DateAdded)
+		@Html.TextBoxFor(m => m.Movie.DateAdded, new { @class = "form-control", @Value = DateTime.Now, @readonly = "readonly" })
+	</div>
+	<div class="form-group">
+		@Html.LabelFor(m => m.Movie.GenreID)
+		@Html.DropDownListFor(m => m.Movie.GenreID, new SelectList(Model.Genres, "Id", "Name"), "Select Genre ", new { @class = "form-control" })
+	</div>
+	<div class="form-group">
+		@Html.LabelFor(m => m.Movie.NumerInStock)
+		@Html.TextBoxFor(m => m.Movie.NumerInStock, new { @class = "form-control" })
+	</div>
+	@Html.HiddenFor(m => m.Movie.Id)
+	<button type="submit" class="btn btn-primary">Save</button>
+}
