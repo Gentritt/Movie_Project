@@ -1,4 +1,6 @@
-﻿using Movie_Project.Models;
+﻿using AutoMapper;
+using Movie_Project.DTO;
+using Movie_Project.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,38 +18,40 @@ namespace Movie_Project.Controllers.Api
             _context = new ApplicationDbContext();
 		}
         //GET/api/customers
-        public IEnumerable<Customer> GetCustomers()
+        public IEnumerable<CustomerDto> GetCustomers()
 		{
-            return _context.Customers.ToList();
+            return _context.Customers.ToList().Select(Mapper.Map<Customer,CustomerDto>);
 
 		}
         //Get/api/customers/1
-        public Customer GetCustomer(int id)
+        public IHttpActionResult GetCustomer(int id)
 		{
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
 
             if (customer == null)
-                throw new HttpResponseException(HttpStatusCode.NotFound);   
-            return customer;
+                return NotFound();
+            return Ok(Mapper.Map<Customer, CustomerDto>(customer));
 
 		}
 
         //Post/api/customers
         [HttpPost]
-        public Customer CreateCustomer(Customer customer)
+        public IHttpActionResult CreateCustomer(CustomerDto customerDto)
 		{
             if (!ModelState.IsValid)
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest();
+            var customer = Mapper.Map<CustomerDto, Customer>(customerDto);
             _context.Customers.Add(customer);
             _context.SaveChanges();
-            return customer;
+            customerDto.Id = customer.Id;
+            return Created(new Uri(Request.RequestUri + "/" + customer.Id),customerDto);
 
 
 		}
 
         //Put/api/customers/1
         [HttpPut]
-        public void UpdateCustomer (int id,Customer customer)
+        public void UpdateCustomer (int id,CustomerDto customerDto)
 		{
             if (!ModelState.IsValid)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
@@ -55,10 +59,11 @@ namespace Movie_Project.Controllers.Api
 
             if (customerInDb == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
-            customerInDb.Name = customer.Name;
-            customerInDb.IssubscribedToNewsletter = customer.IssubscribedToNewsletter;
-            customerInDb.Birthdate = customer.Birthdate;
-            customerInDb.MembershipTypeId = customer.MembershipTypeId;
+            Mapper.Map(customerDto,customerInDb);
+            //customerInDb.Name = customerDto.Name;
+            //customerInDb.IssubscribedToNewsletter = customerDto.IssubscribedToNewsletter;
+            //customerInDb.Birthdate = customerDto.Birthdate;
+            //customerInDb.MembershipTypeId = customerDto.MembershipTypeId;
             _context.SaveChanges();
 
 		}

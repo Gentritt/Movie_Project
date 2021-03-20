@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Movie_Project.DTO;
+using Movie_Project.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +12,8 @@ namespace Movie_Project.App_Start
 	{
 		public MappingProfile()
 		{
-
+			Mapper.CreateMap<Customer, CustomerDto>();
+			Mapper.CreateMap<CustomerDto, Customer>();
 		}
 	}
 }
