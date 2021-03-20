@@ -17,7 +17,7 @@ namespace Movie_Project.Models
 		[Display(Name = "MemberShip Type: ")]
 		public int MembershipTypeId { get; set; }
 		[DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
-
+		[Display(Name = "Date of Birth")]
 		public DateTime? Birthdate { get; set; }
 
 	}

@@ -35,18 +35,19 @@ namespace Movie_Project.Controllers
 		}
         
         [HttpPost]
+        //[ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
 		{
 			//if (!ModelState.IsValid)
 			//{
-   //             var viewmodel = new NewCustomerViewModel
-   //             {
-   //                 Customer = customer,
-   //                 MembershipTypes = _context.MembershipTypes.ToList()
-   //             };
-   //             return View("CustomerForm", viewmodel);
+			//	var viewmodel = new NewCustomerViewModel
+			//	{
+			//		Customer = customer,
+			//		MembershipTypes = _context.MembershipTypes.ToList()
+			//	};
+			//	return View("CustomerForm", viewmodel);
 			//}
-            if (customer.Id == 0)
+			if (customer.Id == 0)
                 _context.Customers.Add(customer);
 
             else
