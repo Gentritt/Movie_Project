@@ -33,10 +33,19 @@ namespace Movie_Project.Controllers
             return View("CustomerForm",viewmodel);
 
 		}
-
+        
         [HttpPost]
         public ActionResult Save(Customer customer)
 		{
+			//if (!ModelState.IsValid)
+			//{
+   //             var viewmodel = new NewCustomerViewModel
+   //             {
+   //                 Customer = customer,
+   //                 MembershipTypes = _context.MembershipTypes.ToList()
+   //             };
+   //             return View("CustomerForm", viewmodel);
+			//}
             if (customer.Id == 0)
                 _context.Customers.Add(customer);
 
