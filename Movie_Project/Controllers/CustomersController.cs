@@ -27,7 +27,9 @@ namespace Movie_Project.Controllers
             var membershipTypes = _context.MembershipTypes.ToList();
             var viewmodel = new NewCustomerViewModel
             {
+                Customer = new Customer(),
                 MembershipTypes = membershipTypes
+                
 
             };
             return View("CustomerForm",viewmodel);
@@ -35,18 +37,18 @@ namespace Movie_Project.Controllers
 		}
         
         [HttpPost]
-        //[ValidateAntiForgeryToken]
-        public ActionResult Save(Customer customer)
+		[ValidateAntiForgeryToken]
+		public ActionResult Save(Customer customer)
 		{
-			//if (!ModelState.IsValid)
-			//{
-			//	var viewmodel = new NewCustomerViewModel
-			//	{
-			//		Customer = customer,
-			//		MembershipTypes = _context.MembershipTypes.ToList()
-			//	};
-			//	return View("CustomerForm", viewmodel);
-			//}
+			if (!ModelState.IsValid)
+			{
+				var viewmodel = new NewCustomerViewModel
+				{
+					Customer = customer,
+					MembershipTypes = _context.MembershipTypes.ToList()
+				};
+				return View("CustomerForm", viewmodel);
+			}
 			if (customer.Id == 0)
                 _context.Customers.Add(customer);
 

@@ -16,8 +16,9 @@ namespace Movie_Project.Models
 		public MembershipType MembershipType { get; set; }
 		[Display(Name = "MemberShip Type: ")]
 		public int MembershipTypeId { get; set; }
-		[DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
-		[Display(Name = "Date of Birth")]
+		//[DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
+		//[Display(Name = "Date of Birth")]
+		[Min18YearsIfAmember]
 		public DateTime? Birthdate { get; set; }
 
 	}
