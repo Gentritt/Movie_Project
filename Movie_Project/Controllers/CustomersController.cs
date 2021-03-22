@@ -16,6 +16,7 @@ namespace Movie_Project.Controllers
         ApplicationDbContext _context = new ApplicationDbContext();
 
         // GET: Customers
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Index()
         {
             //var customers = _context.Customers.Include(x=> x.MembershipType).ToList();
