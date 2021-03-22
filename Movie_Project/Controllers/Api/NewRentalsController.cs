@@ -36,7 +36,7 @@ namespace Movie_Project.Controllers.Api
 				if (movie.NumerInStock == 0)
 					return BadRequest("Movie is not avaliable");
 
-				movie.NumerInStock--;
+				movie.NumberAvaliable--;
 
 				var rental = new Rental
 				{

@@ -82,10 +82,10 @@
 					data: vm
 				})
 					.done(function () {
-						console.log("DONE");
+						toastr.success("Rental successfully recorded ! :)")
 					})
 					.fail(function () {
-
+						toastr.error("Rental Failed !")
 					})
 			})
 		});

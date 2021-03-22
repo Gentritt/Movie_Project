@@ -24,7 +24,7 @@ namespace Movie_Project.Controllers.Api
         
         public IEnumerable<MovieDto> GetMovies(string query = null)
 		{
-            var moviesQuery = _context.Movies.Include(m => m.Genre).Where(m => m.NumerInStock > 0);
+            var moviesQuery = _context.Movies.Include(m => m.Genre).Where(m => m.NumberAvaliable > 0);
 
             if (!string.IsNullOrWhiteSpace(query))
                 moviesQuery = moviesQuery.Where(m => m.Name.Contains(query));
