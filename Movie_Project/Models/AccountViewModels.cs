@@ -65,6 +65,10 @@ namespace Movie_Project.Models
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name ="Phone Number")]
+        public string Phone { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }

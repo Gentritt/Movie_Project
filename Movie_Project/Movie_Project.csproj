@@ -235,6 +235,10 @@
     <Compile Include="Migrations\202103221401068_SeedUsers.Designer.cs">
       <DependentUpon>202103221401068_SeedUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103221423233_addPhoneToApplicationUser.cs" />
+    <Compile Include="Migrations\202103221423233_addPhoneToApplicationUser.Designer.cs">
+      <DependentUpon>202103221423233_addPhoneToApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -244,6 +248,7 @@
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearsIfAmember.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\RoleName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CustomMovieViewModel.cs" />
@@ -536,6 +541,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103221401068_SeedUsers.resx">
       <DependentUpon>202103221401068_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103221423233_addPhoneToApplicationUser.resx">
+      <DependentUpon>202103221423233_addPhoneToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
