@@ -12,7 +12,8 @@ namespace Movie_Project
 						"~/Scripts/jquery-{version}.js",
 						 "~/Scripts/bootstrap.js",
 						 "~/Scripts/DataTables/jquery.datatables.js",
-						 "~/Scripts/DataTables/datatables.bootstrap.js"
+						 "~/Scripts/DataTables/datatables.bootstrap.js",
+						 "~/Scripts/bootbox.js"
 						 ));
 
 			bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
