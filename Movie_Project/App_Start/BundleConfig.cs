@@ -13,7 +13,8 @@ namespace Movie_Project
 						 "~/Scripts/bootstrap.js",
 						 "~/Scripts/DataTables/jquery.datatables.js",
 						 "~/Scripts/DataTables/datatables.bootstrap.js",
-						 "~/Scripts/bootbox.js"
+						 "~/Scripts/bootbox.js",
+						 "~/Scripts/typeahead.bundle.js"
 						 ));
 
 			bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -30,7 +31,8 @@ namespace Movie_Project
 			bundles.Add(new StyleBundle("~/Content/css").Include(
 					  "~/Content/bootstrap.css",
 					  "~/Content/DataTables/css/datatables.bootstrap.css",
-					  "~/Content/site.css")); 
+					  "~/Content/site.css",
+					  "~/Content/typeahead.css")); 
 		}
 	}
 }
