@@ -23,7 +23,7 @@ namespace Movie_Project.Controllers.Api
 
 		{
             var customersQuery = _context.Customers.Include(c => c.MembershipType);
-            if (string.IsNullOrWhiteSpace(query))
+            if (!String.IsNullOrWhiteSpace(query))
                 customersQuery = customersQuery.Where(c => c.Name.Contains(query));
 
             var customerDtos = customersQuery

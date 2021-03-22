@@ -19,17 +19,9 @@ namespace Movie_Project.Controllers.Api
 		[HttpPost]
         public IHttpActionResult CreateNewRental(NewRentalDto newRentalDto)
 		{
-			if (newRentalDto.MovieIds.Count == 0)
-				return BadRequest("No MoviesIds was given");
 
-			var customer = _context.Customers.SingleOrDefault(c => c.Id == newRentalDto.CustomerId);
-			if (customer == null)
-				return BadRequest("CustomerId is not valid");
-
+			var customer = _context.Customers.Single(c => c.Id == newRentalDto.CustomerId);
 			var movies = _context.Movies.Where(m => newRentalDto.MovieIds.Contains(m.Id)).ToList();
-
-			if (movies.Count != newRentalDto.MovieIds.Count)
-				return BadRequest("One Or more ids are invalid");
 
 			foreach (var movie in movies)
 			{

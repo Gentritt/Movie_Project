@@ -8,7 +8,7 @@ namespace Movie_Project.Migrations
         public override void Up()
         {
             AddColumn("dbo.Movies", "NumberAvaliable", c => c.Byte(nullable: false));
-            Sql("UPDATE MOVIES SET NumberAvaliable = NumerInStock");
+            Sql("UPDATE MOVIES SET NumberAvaliable = NumerInStock");    
         }
         
         public override void Down()
