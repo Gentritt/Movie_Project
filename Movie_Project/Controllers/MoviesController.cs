@@ -16,10 +16,14 @@ namespace Movie_Project.Controllers
         public ActionResult Index()
         {
             //var movie = _context.Movies.Include(x=> x.Genre).ToList();
+            if (User.IsInRole(RoleName.CanManageMovies))
+                return View("Index");
+            else
+                return View("ReadOnlyList");
             
-            return View();
         }
 
+        [Authorize(Roles =RoleName.CanManageMovies)]
         public ActionResult New()
 		{
             var genres = _context.Genres.ToList();
