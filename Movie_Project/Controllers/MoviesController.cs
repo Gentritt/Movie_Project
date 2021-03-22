@@ -38,6 +38,7 @@ namespace Movie_Project.Controllers
 
 
         [HttpPost]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Save(Movie movie)
         {
             if (movie.Id == 0)
@@ -68,7 +69,7 @@ namespace Movie_Project.Controllers
 
 
         }
-
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Edit(int id)
         {
             var movie = _context.Movies.SingleOrDefault(c => c.Id == id);

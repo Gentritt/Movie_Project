@@ -21,7 +21,7 @@ namespace Movie_Project.Controllers.Api
 		}
 
         //Get/api/movies
-
+        
         public IHttpActionResult GetMovies()
 		{
             var movieDto = _context.Movies.Include(x=> x.Genre)
@@ -43,7 +43,7 @@ namespace Movie_Project.Controllers.Api
 
         //Post/Api/Customers
         [HttpPost]
-
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult CreateMovie(MovieDto movieDto)
 		{
             if (!ModelState.IsValid)
@@ -59,6 +59,7 @@ namespace Movie_Project.Controllers.Api
 
         //Put/api/customers/1
         [HttpPut]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public void UpdateMovie(int id, MovieDto movieDto)
 		{
             if (!ModelState.IsValid)
@@ -75,6 +76,7 @@ namespace Movie_Project.Controllers.Api
         }
         //Delete/api/movies/1
         [HttpDelete]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public void DeleteCustomer(int id)
         {
             var movieInDb = _context.Movies.SingleOrDefault(c => c.Id == id);
