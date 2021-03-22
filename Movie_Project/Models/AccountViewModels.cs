@@ -6,6 +6,9 @@ namespace Movie_Project.Models
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
+        [Display(Name ="Phone Number")]
+        public string Phone { get; set; }
+        [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
@@ -65,6 +68,7 @@ namespace Movie_Project.Models
     public class RegisterViewModel
     {
         [Required]
+        [StringLength(50)]
         [Display(Name ="Phone Number")]
         public string Phone { get; set; }
 

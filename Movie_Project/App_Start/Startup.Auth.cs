@@ -45,24 +45,24 @@ namespace Movie_Project
             // This is similar to the RememberMe option when you log in.
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
-            // Uncomment the following lines to enable logging in with third party login providers
-            //app.UseMicrosoftAccountAuthentication(
-            //    clientId: "",
-            //    clientSecret: "");
+			// Uncomment the following lines to enable logging in with third party login providers
+			//app.UseMicrosoftAccountAuthentication(
+			//    clientId: "",
+			//    clientSecret: "");
 
-            //app.UseTwitterAuthentication(
-            //   consumerKey: "",
-            //   consumerSecret: "");
+			//app.UseTwitterAuthentication(
+			//   consumerKey: "",
+			//   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+			app.UseFacebookAuthentication(
+			   appId: "473626707008964",
+			   appSecret: "55c121eee8a5f4f7b8668dc0b45c9e05");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
-        }
+			//app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+			//{
+			//    ClientId = "",
+			//    ClientSecret = ""
+			//});
+		}
     }
 }
