@@ -22,12 +22,14 @@ namespace Movie_Project.Controllers.Api
 
         //Get/api/movies
         
-        public IHttpActionResult GetMovies()
+        public IEnumerable<MovieDto> GetMovies(string query = null)
 		{
-            var movieDto = _context.Movies.Include(x=> x.Genre)
-                .ToList()
-                .Select(Mapper.Map<Movie, MovieDto>);
-            return Ok(movieDto);
+            var moviesQuery = _context.Movies.Include(m => m.Genre).Where(m => m.NumerInStock > 0);
+
+            if (!string.IsNullOrWhiteSpace(query))
+                moviesQuery = moviesQuery.Where(m => m.Name.Contains(query));
+
+            return moviesQuery.ToList().Select(Mapper.Map<Movie, MovieDto>);
 		}
 
         //Get/api/customers/1

@@ -33,10 +33,10 @@ namespace Movie_Project.Controllers.Api
 
 			foreach (var movie in movies)
 			{
-				if (movie.NumberAvaliable == 0)
+				if (movie.NumerInStock == 0)
 					return BadRequest("Movie is not avaliable");
 
-				movie.NumberAvaliable--;
+				movie.NumerInStock--;
 
 				var rental = new Rental
 				{
