@@ -15,9 +15,9 @@ namespace Movie_Project.Controllers
         // GET: Movies
         public ActionResult Index()
         {
-            var movie = _context.Movies.Include(x=> x.Genre).ToList();
+            //var movie = _context.Movies.Include(x=> x.Genre).ToList();
             
-            return View(movie);
+            return View();
         }
 
         public ActionResult New()
