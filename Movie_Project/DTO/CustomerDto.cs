@@ -14,6 +14,7 @@ namespace Movie_Project.DTO
 		[StringLength(255)]
 		public string Name { get; set; }
 		public bool IssubscribedToNewsletter { get; set; }
+		public MembershipTypeDto membershipType { get; set; }
 		public int MembershipTypeId { get; set; }
 		//[Min18YearsIfAmember]
 		public DateTime? Birthdate { get; set; }

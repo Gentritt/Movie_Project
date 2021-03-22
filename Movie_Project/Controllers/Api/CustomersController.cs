@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Data.Entity;
 
 namespace Movie_Project.Controllers.Api
 {
@@ -18,9 +19,13 @@ namespace Movie_Project.Controllers.Api
             _context = new ApplicationDbContext();
 		}
         //GET/api/customers
-        public IEnumerable<CustomerDto> GetCustomers()
+        public IHttpActionResult GetCustomers()
 		{
-            return _context.Customers.ToList().Select(Mapper.Map<Customer,CustomerDto>);
+            var customerDtos = _context.Customers
+                .Include(x=> x.MembershipType)
+                .ToList()
+                .Select(Mapper.Map<Customer,CustomerDto>);
+            return Ok(customerDtos);
 
 		}
         //Get/api/customers/1
