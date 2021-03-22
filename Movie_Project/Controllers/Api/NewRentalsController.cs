@@ -1,4 +1,5 @@
-﻿using Movie_Project.DTO;
+﻿using AutoMapper;
+using Movie_Project.DTO;
 using Movie_Project.Models;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Data.Entity;
 
 namespace Movie_Project.Controllers.Api
 {
@@ -40,6 +42,14 @@ namespace Movie_Project.Controllers.Api
 			}
 			_context.SaveChanges();
 			return Ok();
+		}
+		// GET/api/rentals
+		public IHttpActionResult GetRentals()
+		{
+			var rentalDto = _context.Rentals.Include(c=> c.Customer).Include(x=> x.Movie)
+				.ToList()
+				.Select(Mapper.Map<Rental, RentalDto>);
+			return Ok(rentalDto);
 		}
     }
 }

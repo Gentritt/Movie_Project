@@ -206,10 +206,13 @@
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\RentalsController.cs" />
     <Compile Include="DTO\CustomerDto.cs" />
+    <Compile Include="DTO\CustomerDtoTest.cs" />
     <Compile Include="DTO\GenreDto.cs" />
     <Compile Include="DTO\MembershipTypeDto.cs" />
     <Compile Include="DTO\MovieDto.cs" />
+    <Compile Include="DTO\MovieDtoTest.cs" />
     <Compile Include="DTO\NewRentalDto.cs" />
+    <Compile Include="DTO\RentalDto.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

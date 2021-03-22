@@ -16,9 +16,11 @@ namespace Movie_Project.App_Start
 			Mapper.CreateMap<CustomerDto, Customer>();
 			Mapper.CreateMap<MembershipType, MembershipTypeDto>();
 			Mapper.CreateMap<Genre, GenreDto>();
-
 			Mapper.CreateMap<Movie, MovieDto>();
 			Mapper.CreateMap<MovieDto, Movie>();
+			Mapper.CreateMap<Rental, RentalDto>();
+			Mapper.CreateMap<Movie, MovieDtoTest>();
+			Mapper.CreateMap<Customer, CustomerDtoTest>();
 
 
 			Mapper.CreateMap<CustomerDto, Customer>()
