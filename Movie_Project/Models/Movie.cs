@@ -22,5 +22,6 @@ namespace Movie_Project.Models
 		[Display(Name="Number in Stock")]
 		[Range(1,20)]
 		public byte NumerInStock { get; set; }
+		public byte NumberAvaliable { get; set; }
 	}
 }
