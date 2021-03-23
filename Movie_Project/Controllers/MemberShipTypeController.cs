@@ -13,5 +13,12 @@ namespace Movie_Project.Controllers
         {
             return View();
         }
+
+        public ActionResult New()
+		{
+
+            return View("MembershipTypeForm");
+		}
+
     }
 }

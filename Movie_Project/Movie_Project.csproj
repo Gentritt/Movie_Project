@@ -586,6 +586,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Genres\Index.cshtml" />
     <Content Include="Views\MemberShipType\Index.cshtml" />
+    <Content Include="Views\MemberShipType\MembershipTypeForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
