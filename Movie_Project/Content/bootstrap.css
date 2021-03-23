@@ -3948,7 +3948,11 @@ tbody.collapse.show {
   justify-content: space-between;
   padding: 0.5rem 1rem;
 }
-
+/*.navbar-inverse {
+    background-color: aqua;
+    border-color: #74D6FF;
+    color: #VALUE;
+}*/
 .navbar > .container,
 .navbar > .container-fluid {
   display: -webkit-box;
@@ -4174,6 +4178,7 @@ tbody.collapse.show {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
+    background-color: aqua;
   }
   .navbar-expand-lg .navbar-nav {
     -webkit-box-orient: horizontal;
@@ -4270,13 +4275,15 @@ tbody.collapse.show {
 }
 
 .navbar-expand {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-flow: row nowrap;
-  flex-flow: row nowrap;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    background-color: #ff0000;
+    border-color: #808080;
 }
 
 .navbar-expand > .container,
@@ -8971,5 +8978,7 @@ a.text-dark:hover, a.text-dark:focus {
   .table-bordered td {
     border: 1px solid #ddd !important;
   }
+   
 }
+
 /*# sourceMappingURL=bootstrap.css.map */
