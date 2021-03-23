@@ -31,6 +31,7 @@ namespace Movie_Project
 
 			bundles.Add(new StyleBundle("~/Content/css").Include(
 					  "~/Content/bootstrap.css",
+					  "~/Content/navbar.css",
 					  "~/Content/DataTables/css/datatables.bootstrap.css",
 					  "~/Content/site.css",
 					  "~/Content/typeahead.css",

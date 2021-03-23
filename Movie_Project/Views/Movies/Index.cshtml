@@ -21,17 +21,90 @@
 			<th>Delete</th>
 		</tr>
 	</thead>
-	<tbody>
-		@*@foreach (var movie in Model)
+</table>
+	@*<tbody>
+		@foreach (var movie in Model)
 			{
 				<tr>
 					<td>@Html.ActionLink(movie.Name, "Edit", "Movies", new { id = movie.Id }, null)</td>
 					<td>@movie.Genre.Name</td>
 
 				</tr>
-			}*@
-	</tbody>
-</table>
+			}
+	</tbody>*@
+
+@*<table id="movies" class="table table-bordered table-hover">
+	<thead>
+		<tr>
+			<th scope="col">Type</th>
+			<th scope="col">Movie</th>
+			<th scope="col">Genre</th>
+			<th scope="col">Delete</th>
+		</tr>
+	</thead>*@
+	@*<tbody>
+		<tr class="table-active">
+			<th scope="row">Active</th>
+			<td>Column content</td>
+			<td>Column content</td>
+			<td>Column content</td>
+		</tr>
+		<tr>
+			<th scope="row">Default</th>
+			<td>Column content</td>
+			<td>Column content</td>
+			<td>Column content</td>
+		</tr>
+		<tr class="table-primary">
+			<th scope="row">Primary</th>
+			<td>Column content</td>
+			<td>Column content</td>
+			<td>Column content</td>
+		</tr>
+		<tr class="table-secondary">
+			<th scope="row">Secondary</th>
+			<td>Column content</td>
+			<td>Column content</td>
+			<td>Column content</td>
+		</tr>
+		<tr class="table-success">
+			<th scope="row">Success</th>
+			<td>Column content</td>
+			<td>Column content</td>
+			<td>Column content</td>
+		</tr>
+		<tr class="table-danger">
+			<th scope="row">Danger</th>
+			<td>Column content</td>
+			<td>Column content</td>
+			<td>Column content</td>
+		</tr>
+		<tr class="table-warning">
+			<th scope="row">Warning</th>
+			<td>Column content</td>
+			<td>Column content</td>
+			<td>Column content</td>
+		</tr>
+		<tr class="table-info">
+			<th scope="row">Info</th>
+			<td>Column content</td>
+			<td>Column content</td>
+			<td>Column content</td>
+		</tr>
+		<tr class="table-light">
+			<th scope="row">Light</th>
+			<td>Column content</td>
+			<td>Column content</td>
+			<td>Column content</td>
+		</tr>
+		<tr class="table-dark">
+			<th scope="row">Dark</th>
+			<td>Column content</td>
+			<td>Column content</td>
+			<td>Column content</td>
+		</tr>
+	</tbody>*@
+
 
 @section scripts{
 
